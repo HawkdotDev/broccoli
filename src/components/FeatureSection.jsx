@@ -7,10 +7,12 @@ import renew from "../assets/Company/renew.png";
 
 const FeatureSection = () => {
   return (
-    <div className="w-screen bg-black px-20 py-20">
+    <div className="w-screen bg-black px-20 pt-20 pb-12">
       <div className="flex justify-between">
         <h1 className="text-5xl">
-          Lorem, ipsum dolor sit amet <br/>consectetur adipisicing
+          <span className="text-yellow-500">
+          Lorem,
+            </span> ipsum dolor sit amet <br/>consectetur adipisicing
         </h1>
         <h1 className="w-[45%]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis soluta ipsam deserunt doloribus animi expedita at, eveniet nihil aliquid iure adipisci cumque est ex fuga possimus enim dolorum, illo sapiente dolore minima. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, pariatur.

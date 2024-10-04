@@ -23,7 +23,7 @@ const Navbar = () => {
           >
             <a href={`#${nav.id}`}>{nav.title}</a>
             {/* Dropdown Menu */}
-            <div className="absolute right-0 hidden group-hover:block text-nowrap p-2 bg-white text-black rounded-md shadow-lg mt-2">
+            <div className="absolute right-0 hidden group-hover:block text-nowrap p-2 px-6 bg-white text-black rounded-md shadow-lg mt-2">
               <ul className="list-none">
                 <li className="px-4 py-2 hover:bg-gray-200">
                   <a href={`#${nav.id}-sub1`}>Sub Item 1</a>
