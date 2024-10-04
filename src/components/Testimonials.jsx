@@ -1,35 +1,31 @@
-import { testimonials } from "../constants";
+// import { feedback } from "../constants";
+// import FeedbackCard from "./FeedbackCard";
 
-const Testimonials = () => {
-  return (
-    <div className="tracking-wide mb-14">
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-10 lg:my-20">
-        What People are saying
-      </h2>
-      <div className="flex flex-wrap justify-center">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 px-4 py-2">
-            <div className="bg-neutral-900 rounded-md p-6 text-md border border-neutral-800 font-thin">
-              <p>{testimonial.text}</p>
-              <div className="flex mt-8 items-start">
-                <img
-                  className="w-12 h-12 mr-6 rounded-full border border-neutral-300"
-                  src={testimonial.image}
-                  alt=""
-                />
-                <div>
-                  <h6>{testimonial.user}</h6>
-                  <span className="text-sm font-normal italic text-neutral-600">
-                    {testimonial.company}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+// const Testimonials = () => (
+// 	<section
+// 		id="clients"
+// 		className={`sm:py-16 py-6 flex justify-center items-center flex-col relative`}
+// 	>
+// 		<div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient bottom-40" />
 
-export default Testimonials;
+// 		<div className="mx-auto flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1] lg:gap-20">
+// 			<h2 className={`font-poppins font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] w-full`}>
+// 				What People are <br className="sm:block hidden" /> saying about us
+// 			</h2>
+// 			<div className="w-full md:mt-0 mt-6">
+// 				<p className={` font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px]} text-left max-w-[450px]`}>
+// 					Everything you need to accept card payments and grow your business
+// 					anywhere on the planet.
+// 				</p>
+// 			</div>
+// 		</div>
+
+// 		<div className="flex flex-col md:flex-row sm:justify-start justify-center mx-auto   feedback-container relative z-[1]">
+// 			{feedback.map((card) => (
+// 				<FeedbackCard key={card.id} {...card} />
+// 			))}
+// 		</div>
+// 	</section>
+// );
+
+// export default Testimonials;

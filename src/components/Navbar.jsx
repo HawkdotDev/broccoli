@@ -1,75 +1,47 @@
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
-import { navItems } from "../constants";
+// import { close, menu } from "../assets";
+import textLogo from "../assets/Company/textLogo.png";
+import { navLinks } from "../constants";
 
 const Navbar = () => {
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-
-  const toggleNavbar = () => {
-    setMobileDrawerOpen(!mobileDrawerOpen);
-  };
+  const [active, setActive] = useState("Home");
 
   return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
-      <div className="container px-4 mx-auto relative lg:text-sm">
-        <div className="flex justify-between items-center">
-          <Link to={"/"} className="flex items-center flex-shrink-0">
-            <img className="h-8 w-8 mr-2" src={logo} alt="Logo" />
-            <span className="text-xl tracking-tight">Immersity</span>
-          </Link>
+    <nav
+      className={`w-full flex pt-4 pb-3 pl-8 pr-12 justify-between items-center fixed z-[99] bg-black }`}
+    >
+      <img src={textLogo} alt="toast" className="w-auto h-[38px]" />
 
-          <ul className="hidden lg:flex ml-14 space-x-12">
-            {navItems.map((item, index) => (
-              <li key={index}>
-                {/* {console.log(item)} */}
-                <Link to={item.label}>{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-          <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <Link
-              to="/brochure"
-              className="py-2 px-3 rounded-md hover:bg-pink-500 font-semibold hover:text-black text-gray-200 border border-pink-600"
-            >
-              Brochure
-            </Link>
-            <Link
-              to="/signin"
-              className="py-2 px-3 border border-emerald-400 rounded-md hover:bg-purple-600 hover:text-black"
-            >
-              Sign In
-            </Link>
-          </div>
-          <div className="lg:hidden md:flex flex-col justify-end items-center">
-            <button onClick={toggleNavbar}>
-              {mobileDrawerOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-        {mobileDrawerOpen && (
-          <div className="fixed right-0 z-20 w-full px-12 pb-8 flex flex-col justify-center items-center lg:hidden backdrop-blur-lg border-b border-neutral-700/80">
-            <ul className="w-screen text-center mb-3">
-              {navItems.map((item, index) => (
-                <li key={index} className="py-4 w-full hover:bg-gray-700/40">
-                  <Link to={item.label}>{item.label}</Link>
+      <ul className="list-none lg:flex hidden justify-center items-center flex-1">
+        {navLinks.map((nav, index) => (
+          <li
+            key={nav.id}
+            className={`relative group font-poppins font-normal cursor-pointer text-[16px] ${
+              active === nav.title ? "text-white" : "text-dimWhite"
+            } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+            onClick={() => setActive(nav.title)}
+          >
+            <a href={`#${nav.id}`}>{nav.title}</a>
+            {/* Dropdown Menu */}
+            <div className="absolute right-0 hidden group-hover:block text-nowrap p-2 bg-white text-black rounded-md shadow-lg mt-2">
+              <ul className="list-none">
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href={`#${nav.id}-sub1`}>Sub Item 1</a>
                 </li>
-              ))}
-            </ul>
-            <div className="flex space-x-6">
-              <Link to="/signin" className="py-2 px-3 border rounded-md">
-                Sign In
-              </Link>
-              <Link
-                to="/signup"
-                className="py-2 px-3 rounded-md bg-gradient-to-r from-purple-600 to-pink-600"
-              >
-                Create an account
-              </Link>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href={`#${nav.id}-sub2`}>Sub Item 2</a>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href={`#${nav.id}-sub3`}>Sub Item 3</a>
+                </li>
+              </ul>
             </div>
-          </div>
-        )}
+          </li>
+        ))}
+      </ul>
+
+      <div className="px-4 py-2 hover:bg-gray-200 bg-yellow-300 rounded-3xl text-amber-950">
+        <a href={`#contact`}>Contact</a>
       </div>
     </nav>
   );

@@ -12,6 +12,38 @@ import user4 from "../assets/profile-pictures/user4.jpg";
 import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
+export const navLinks = [
+  {
+    id: "home",
+    title: "Home",
+  },
+  {
+    id: "our solutions",
+    title: "Our Solutions",
+  },
+  {
+    id: "about us",
+    title: "About us",
+  },
+  {
+    id: "sustainability",
+    title: "Sustainability",
+  },
+  {
+    id: "blogs",
+    title: "Blogs",
+  },
+  {
+    id: "careers",
+    title: "Careers",
+  },
+
+  {
+    id: "media",
+    title: "Media",
+  },
+];
+
 export const navItems = [
   { label: "Features", href: "#" },
   { label: "Workflow", href: "#" },
