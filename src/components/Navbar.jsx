@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import { close, menu } from "../assets";
-import textLogo from "../assets/Company/textLogo.png";
+import Logo from "../assets/image/Logo.png";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full flex pt-4 pb-3 pl-8 pr-12 justify-between items-center fixed z-[99] bg-black }`}
+      className={`w-full flex pt-4 pb-3 pl-8 pr-12 justify-between items-center fixed z-[99] bg-[#2d2929] }`}
     >
-      <img src={textLogo} alt="toast" className="w-auto h-[38px]" />
+      <img src={Logo} alt="toast" className="w-[212px] h-[22px]" />
 
       <ul className="list-none lg:flex hidden justify-center items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -40,7 +40,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="px-4 py-2 hover:bg-gray-200 bg-yellow-300 rounded-3xl text-amber-950">
+      <div className="px-4 py-2 hover:bg-gray-200 bg-yellow-300 rounded-2xl text-black">
         <a href={`#contact`}>Contact</a>
       </div>
     </nav>

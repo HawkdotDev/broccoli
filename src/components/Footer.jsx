@@ -3,7 +3,7 @@ import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => (
   <section
-    className={`flex justify-center items-center py-6 flex-col px-16`}
+    className={`flex justify-center items-center py-6 flex-col px-16 bg-[#2d2929]`}
   >
     <div
       className={`flex justify-center items-start md:flex-row flex-col mb-8 w-full`}

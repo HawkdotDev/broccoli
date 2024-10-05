@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
-const AnimatedCounter = ({numsArray}) => {
+const AnimatedCounter = ({ numsArray }) => {
   // Numbers array where the counter stops
   const numbersArray = numsArray; // Add your desired stop points here
   const [count, setCount] = useState(0);
   const [progress, setProgress] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [currentIndex, setCurrentIndex] = useState(0); // Track the target number index
+  const [started, setStarted] = useState(false); // Track if the counter has started after delay
 
   const targetNumber = numbersArray[currentIndex]; // Current target number
   const maxProgressForCounter = 65; // The progress at which the counter should stop (65%)
@@ -15,36 +17,38 @@ const AnimatedCounter = ({numsArray}) => {
   const progressToMax = maxProgressForCounter;
   const incrementSpeed = targetNumber / progressToMax; // Calculate how fast to increment
 
+  // Start the counter after 1 second delay
+  useEffect(() => {
+    const startTimeout = setTimeout(() => {
+      setStarted(true);
+    }, 500); // 1 second delay
+
+    return () => clearTimeout(startTimeout); // Clear timeout if component unmounts
+  }, []);
+
   // Function to increment the number
   useEffect(() => {
     let numberInterval;
-    if (count < targetNumber && progress < maxProgressForCounter) {
+    if (started && count < targetNumber && progress < maxProgressForCounter) {
       numberInterval = setInterval(() => {
-        setCount((prev) => prev + incrementSpeed); // Increment based on the calculated speed
-      }, 50); // Adjust interval as needed for smoothness
+        setCount((prev) => Math.min(prev + incrementSpeed, targetNumber)); // Increment based on speed
+      }, 50); // Adjust interval for smoothness
     }
     return () => clearInterval(numberInterval);
-  }, [count, progress, targetNumber, incrementSpeed]);
+  }, [count, progress, targetNumber, incrementSpeed, started]);
 
   // Function to animate the progress bar
   useEffect(() => {
     let progressInterval;
-    if (progress < 100) {
+    if (started && progress < 100) {
       progressInterval = setInterval(() => {
         setProgress((prev) => prev + 1);
       }, 50); // Adjust the speed here
-    } else {
-      // Once progress reaches 100%, reset and move to the next target number
-      setProgress(0);
-      setCurrentIndex((prevIndex) =>
-        prevIndex === numbersArray.length - 1 ? 0 : prevIndex + 1
-      ); // Loop back to the start of the array
-      setCount(0); // Reset the counter for the next cycle
     }
     return () => clearInterval(progressInterval);
-  }, [progress, currentIndex, numbersArray.length]);
+  }, [progress, started]);
 
-  // Ensure count doesn't exceed the target number when the progress reaches 65%
+  // Stop the counter and set it to the target number when progress hits maxProgressForCounter
   useEffect(() => {
     if (progress >= maxProgressForCounter) {
       setCount(targetNumber);
@@ -52,18 +56,13 @@ const AnimatedCounter = ({numsArray}) => {
   }, [progress, targetNumber]);
 
   return (
-    <div className="flex w-[25%] flex-col items-center">
-      <div className="text-5xl w-full font-bold text-yellow-400 text-start">
-        {Math.round(count)} %
+    <div className="flex w-[20%] flex-col items-center">
+      <div className="text-3xl w-full font-bold text-yellow-400 text-start">
+        {Math.round(count)}
       </div>
-      <div className="text-white w-full">
-        Lorem ipsum dolor sit
-      </div>
-      <div className="bg-gray-300 w-full h-1 mt-3">
-        <div
-          className="bg-orange-400 h-1"
-          style={{ width: `${progress}%` }}
-        ></div>
+      <div className="text-white w-full pt-1">
+        Lorem ipsum dolor.
+        <span className="text-gray-500"> adipisicing elit, ipsam.</span>
       </div>
     </div>
   );
