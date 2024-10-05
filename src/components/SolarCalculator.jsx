@@ -24,7 +24,7 @@ const SolarCalculator = () => {
   };
 
   return (
-    <div className="border border-green-600 p-5 bg-yellow-300 rounded-md shadow-lg m-2">
+    <div className="border border-green-600 p-5 bg-lime-300 rounded-md shadow-lg m-2">
       <form autoComplete="off" id="frm">
         <div className="mb-4">
           <label className="block text-lg font-bold mb-2 text-green-800">1. Select any one option</label>
@@ -191,7 +191,7 @@ const SolarCalculator = () => {
         <button
           type="button"
           onClick={handleSubmit}
-          className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-200"
+          className="bg-yellow-300 border border-black text-black px-4 py-2 rounded-md hover:bg-green-700 transition duration-200"
         >
           Calculate
         </button>

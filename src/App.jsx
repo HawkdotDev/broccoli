@@ -21,7 +21,11 @@ const App = () => {
             <Route path="/" element={<HeroSection />} />
           </Routes>
           <FeatureSection />
-          <div className="flex py-8">
+          <div>
+          <h1 className="px-5 pt-3 text-2xl text-lime-200">
+            Solar Calculator
+          </h1>
+          <div className="flex pb-8">
             <div className="w-[50%] p-3">
               <SolarCalculator />
             </div>
@@ -40,11 +44,12 @@ const App = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Sapiente dolore harum iste!
                 </p>
-                <button className="bg-yellow-300 p-2 rounded-2xl mt-5 text-black px-4">
+                <button className="bg-lime-300 p-2 rounded-2xl mt-5 text-black px-4">
                   Get in touch
                 </button>
               </div>
             </div>
+          </div>
           </div>
           <div className="w-screen px-16 bg-[#FFFFFF]">
             <img
