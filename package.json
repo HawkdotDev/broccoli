@@ -1,6 +1,6 @@
 {
-  "homepage": "https://hawkdotdev.github.io/AKIP/",
-  "name": "AKIP",
+  "homepage": "https://hawkdotdev.github.io/broccoli/",
+  "name": "broccoli",
   "private": true,
   "version": "0.0.0",
   "type": "module",

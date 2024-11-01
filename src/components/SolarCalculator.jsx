@@ -290,7 +290,7 @@ const SolarCalculator = () => {
         <button
           type="button"
           onClick={() => alert("your calculated value")}
-          className="bg-green-500 border text-white border-black hover:text-slate-700 px-8 py-2 rounded-full hover:bg-green-400 transition duration-200 mt-8"
+          className="bg-green-500 text-white border-black hover:text-slate-700 px-8 py-2 rounded-full hover:bg-green-400 transition duration-200 mt-8"
         >
           Calculate
         </button>

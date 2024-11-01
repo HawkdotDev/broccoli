@@ -13,39 +13,47 @@ const Services = () => {
           </button>
         </div>
         <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-3">
-          <div className="hover:bg-gray-500 backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-xl justify-around p-7 text-black items-start flex-col">
-            1
+          <div className="hover:bg-white hover:border border-black backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-2xl justify-around px-7 py-4 text-black items-start flex-col">
+            <h1 className="text-4xl text-gray-500">
+              01
+            </h1>
             <h1 className="text-xl text-wrap">
               Lorem ipsum dolor sit <br /> random lines
             </h1>
-            <a className="border-b text-black border-black">
+            <a className="border-b text-black border-black text-xs font-semibold">
               View Details
             </a>
           </div>
-          <div className="hover:bg-gray-500 backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-xl justify-around p-7 text-black items-start flex-col">
-            2
+          <div className="hover:bg-white hover:border border-black backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-2xl justify-around px-7 py-4 text-black items-start flex-col">
+          <h1 className="text-4xl text-gray-500">
+              02
+            </h1>
             <h1 className="text-xl text-wrap">
               Lorem ipsum dolor sit <br /> random lines
             </h1>
-            <a className="border-b text-black border-black">
+            <a className="border-b text-black border-black text-xs font-semibold">
               View Details
             </a>
           </div>
-          <div className="hover:bg-gray-500 backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-xl justify-around p-7 text-black items-start flex-col">
-            3
+          <div className="hover:bg-white hover:border border-black backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-2xl justify-around px-7 py-4 text-black items-start flex-col">
+          <h1 className="text-4xl text-gray-500">
+              03
+            </h1>
             <h1 className="text-xl text-wrap">
               Lorem ipsum dolor sit <br /> random lines
             </h1>
-            <a className="border-b text-black border-black">
+            <a className="border-b text-black border-black text-xs font-semibold">
               View Details
             </a>
           </div>
-          <div className="hover:bg-gray-500 backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-xl justify-around p-7 text-black items-start flex-col">
-            4
+          <div className="hover:bg-white hover:border border-black backdrop-blur-md  bg-gray-300 w-72 h-48 flex border rounded-2xl justify-around px-7 py-4 text-black items-start flex-col">
+          <h1 className="text-4xl text-gray-500">
+              04
+            </h1>
             <h1 className="text-xl text-wrap">
               Lorem ipsum dolor sit <br /> random lines
             </h1>
-            <a className="border-b text-black border-black">
+            <a className="border-b text-black border-black text-xs font-semibold">
               View Details
             </a>
           </div>

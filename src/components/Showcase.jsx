@@ -14,7 +14,7 @@ const Showcase = () => {
           <div className="bg-green-400 text-black w-8 h-8 flex justify-center items-center rounded-xl">
             #
           </div>
-          <h1>Lorem ipsum dolor</h1>
+          <h1 className="text-2xl">Lorem ipsum dolor</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum.
           </p>
@@ -23,7 +23,7 @@ const Showcase = () => {
           <div className="bg-green-400 text-black w-8 h-8 flex justify-center items-center rounded-xl">
             #
           </div>
-          <h1>Lorem ipsum dolor</h1>
+          <h1 className="text-2xl">Lorem ipsum dolor</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum.
           </p>
@@ -32,7 +32,7 @@ const Showcase = () => {
           <div className="bg-green-400 text-black w-8 h-8 flex justify-center items-center rounded-xl">
             #
           </div>
-          <h1>Lorem ipsum dolor</h1>
+          <h1 className="text-2xl">Lorem ipsum dolor</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum.
           </p>
@@ -41,7 +41,7 @@ const Showcase = () => {
           <div className="bg-green-400 text-black w-8 h-8 flex justify-center items-center rounded-xl">
             #
           </div>
-          <h1>Lorem ipsum dolor</h1>
+          <h1 className="text-2xl">Lorem ipsum dolor</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum.
           </p>
@@ -50,7 +50,7 @@ const Showcase = () => {
           <div className="bg-green-400 text-black w-8 h-8 flex justify-center items-center rounded-xl">
             #
           </div>
-          <h1>Lorem ipsum dolor</h1>
+          <h1 className="text-2xl">Lorem ipsum dolor</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum.
           </p>
@@ -59,7 +59,7 @@ const Showcase = () => {
           <div className="bg-green-400 text-black w-8 h-8 flex justify-center items-center rounded-xl">
             #
           </div>
-          <h1>Lorem ipsum dolor</h1>
+          <h1 className="text-2xl">Lorem ipsum dolor</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum.
           </p>
