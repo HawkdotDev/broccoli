@@ -1,6 +1,6 @@
 {
-  "homepage": "https://hawkdotdev.github.io/broccoli/",
-  "name": "broccoli",
+  "homepage": "https://hawkdotdev.github.io/AKIP/",
+  "name": "AKIP",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,7 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001662",
+    "caniuse-lite": "^1.0.30001675",
     "gh-pages": "^6.1.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.344.0",

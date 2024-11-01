@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full flex pt-4 pb-3 pl-8 pr-12 justify-between items-center fixed z-[99] bg-[#2d2929] }`}
+      className={`w-full flex pt-4 pb-3 pl-12 pr-12 justify-between items-center fixed z-[99] }`}
     >
-      <img src={Logo} alt="toast" className="w-[212px] h-[22px]" />
+      <img src={Logo} alt="toast" className="w-[72px] h-[72px]" />
 
       <ul className="list-none lg:flex hidden justify-center items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -39,9 +39,14 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-
-      <div className="px-4 py-2 hover:bg-gray-200 bg-yellow-300 rounded-2xl text-black">
-        <a href={`#contact`}>Contact</a>
+      
+      <div className="flex gap-2">
+        <div className={`px-4 py-2 hover:bg-green-400 hover:text-white bg-gray-100 rounded-full text-black`}>
+          <a href={`#contact`}>Login</a>
+        </div>
+        <div className="px-4 py-2 hover:bg-gray-200 hover:text-black bg-green-400 rounded-full text-white">
+          <a href={`#contact`}>Sign in</a>
+        </div>
       </div>
     </nav>
   );

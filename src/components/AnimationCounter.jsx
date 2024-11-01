@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
-const AnimatedCounter = ({ numsArray }) => {
+const AnimatedCounter = ({ numsArray, decoration }) => {
   // Numbers array where the counter stops
   const numbersArray = numsArray; // Add your desired stop points here
   const [count, setCount] = useState(0);
@@ -56,11 +56,11 @@ const AnimatedCounter = ({ numsArray }) => {
   }, [progress, targetNumber]);
 
   return (
-    <div className="flex w-[20%] flex-col items-center">
-      <div className="text-3xl w-full font-bold text-yellow-400 text-start">
-        {Math.round(count)}
+    <div className="flex w-[28%] flex-col items-center justify-center">
+      <div className="text-5xl w-full text-black text-start">
+        {Math.round(count)} {decoration}
       </div>
-      <div className="text-white w-full pt-1">
+      <div className="text-black w-full pt-1">
         Lorem ipsum dolor.
         <span className="text-gray-500"> adipisicing elit, ipsam.</span>
       </div>

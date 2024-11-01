@@ -2,7 +2,7 @@ import solar from "../assets/image/solar.jpg";
 
 const HeroCard = () => {
   return (
-    <div className="backdrop-blur-sm border border-gray-300/20 bg-slate-400/35 p-2 w-[40%] h-[46%] rounded-2xl flex flex-col justify-between">
+    <div className="backdrop-blur-sm border border-gray-300/20 bg-slate-400/35 p-2 w-[50%] h-[46%] rounded-2xl flex flex-col justify-between">
               <div className="w-full h-[68%] flex justify-between">
                 <img
                   src={solar}

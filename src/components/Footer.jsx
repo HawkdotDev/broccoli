@@ -1,11 +1,11 @@
-import textLogo from "../assets/Company/textLogo.png";
-import { footerLinks, socialMedia } from "../constants";
+// import textLogo from "../assets/Company/textLogo.png";
+// import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => (
   <section
-    className={`flex justify-center items-center py-6 flex-col px-16 bg-[#2d2929]`}
+    className={`flex justify-center items-center py-6 flex-col px-16 bg-[#191915] h-72`}
   >
-    <div
+    {/* <div
       className={`flex justify-center items-start md:flex-row flex-col mb-8 w-full`}
     >
       <div className="flex-[1] flex flex-col justify-start items-start mr-10">
@@ -68,7 +68,7 @@ const Footer = () => (
           />
         ))}
       </div>
-    </div>
+    </div> */}
   </section>
 );
 

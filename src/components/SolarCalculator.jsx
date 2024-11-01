@@ -1,197 +1,296 @@
-import { useState } from 'react';
+import { useState } from "react";
+// import CustomAlert from './CustomAlert';
 
 const SolarCalculator = () => {
-  const [selectedOption, setSelectedOption] = useState('');
-  const [roofArea, setRoofArea] = useState('');
-  const [roofAreaPercentage, setRoofAreaPercentage] = useState('');
-  const [consumption, setConsumption] = useState('');
-  const [budget, setBudget] = useState('');
-  const [state, setState] = useState('');
-  const [customerType, setCustomerType] = useState('');
-  const [electricityCost, setElectricityCost] = useState('8');
+  const [selectedOption, setSelectedOption] = useState(
+    "Monthly Electricity Bill"
+  );
+  const [roofArea, setRoofArea] = useState("");
+  const [roofAreaPercentage, setRoofAreaPercentage] = useState("");
+  const [consumption, setConsumption] = useState("");
+  const [budget, setBudget] = useState("");
+  const [state, setState] = useState("");
+  const [customerType, setCustomerType] = useState("");
+  const [electricityCost, setElectricityCost] = useState("");
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
-    setRoofArea('');
-    setRoofAreaPercentage('');
-    setConsumption('');
-    setBudget('');
+    setRoofArea("");
+    setRoofAreaPercentage("");
+    setConsumption("");
+    setBudget("");
   };
 
-  const handleSubmit = () => {
-    // Add calculation logic here
-    alert('Calculating...'); // Placeholder for actual calculation
-  };
+  // const [showAlert, setShowAlert] = useState(false);
+
+  // const handleSubmit = () => {
+  //   setShowAlert(true); // Show the custom alert
+  // };
+
+  // const closeAlert = () => {
+  //   setShowAlert(false); // Close the alert
+  // };
 
   return (
-    <div className="border border-green-600 p-5 bg-lime-300 rounded-md shadow-lg m-2">
-      <form autoComplete="off" id="frm">
-        <div className="mb-4">
-          <label className="block text-lg font-bold mb-2 text-green-800">1. Select any one option</label>
-          <div className="flex space-x-4 mb-4">
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="checkbox_fill_three"
-                className="form-checkbox h-6 w-6 text-green-600 rounded-full"
-                onChange={() => handleOptionChange('Monthly Electricity Bill')}
-              />
-              <label htmlFor="checkbox_fill_three" className="cursor-pointer text-gray-700 ml-2">
-                Monthly Electricity Bill
-              </label>
-            </div>
-            <p className="mx-2 text-green-800">(OR)</p>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="checkbox_fill_two"
-                className="form-checkbox h-6 w-6 text-green-600 rounded-full"
-                onChange={() => handleOptionChange('Monthly Electricity Consumption Units')}
-              />
-              <label htmlFor="checkbox_fill_two" className="cursor-pointer text-gray-700 ml-2">
-                Monthly Electricity Consumption Units
-              </label>
-            </div>
-            <p className="mx-2 text-green-800">(OR)</p>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="checkbox_fill_one"
-                className="form-checkbox h-6 w-6 text-green-600 rounded-full"
-                onChange={() => handleOptionChange('Total Area of the Rooftop')}
-              />
-              <label htmlFor="checkbox_fill_one" className="cursor-pointer text-gray-700 ml-2">
-                Total Area of the Rooftop
-              </label>
-            </div>
-          </div>
-        </div>
+    <div className="border h-full border-green-600 p-8 bg-white rounded-3xl shadow-lg m-2">
+      <h2 className="text-gray-500 text-3xl py-3 mb-10">
+        Lorem ipsum dolor sit amet, consectetur <br /> adipisicing odit
+        exercitationem commodi{" "}
+        <span className="text-black">elit. Aliquid.</span>
+      </h2>
 
-        {selectedOption === 'Total Area of the Rooftop' && (
-          <div className="mb-4">
-            <label className="block text-gray-700">Rooftop Area:</label>
+      {/* Selection Buttons */}
+      <div className="mb-8 flex justify-between">
+        <button
+          type="button"
+          onClick={() => handleOptionChange("Monthly Electricity Bill")}
+          className={`px-8 py-2 rounded-full ${
+            selectedOption === "Monthly Electricity Bill"
+              ? "bg-green-500 text-white"
+              : "border border-black text-black"
+          } hover:bg-green-500 hover:border-green-500 hover:text-white transition`}
+        >
+          Monthly Electricity Bill
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            handleOptionChange("Monthly Electricity Consumption Units")
+          }
+          className={`px-8 py-2 rounded-full ${
+            selectedOption === "Monthly Electricity Consumption Units"
+              ? "bg-green-500 text-white"
+              : "border border-black text-black"
+          } hover:bg-green-500 hover:border-green-500 hover:text-white transition`}
+        >
+          Monthly Electricity Consumption Units
+        </button>
+        <button
+          type="button"
+          onClick={() => handleOptionChange("Total Area of the Rooftop")}
+          className={`px-8 py-2 rounded-full ${
+            selectedOption === "Total Area of the Rooftop"
+              ? "bg-green-500 text-white"
+              : "border border-black text-black"
+          } hover:bg-green-500 hover:border-green-500 hover:text-white transition`}
+        >
+          Total Area of the Rooftop
+        </button>
+      </div>
+
+      <form autoComplete="off" id="frm">
+        {/* Unique Inputs Based on Selection */}
+        {selectedOption === "Total Area of the Rooftop" && (
+          <div className="mb-8 flex justify-between gap-5">
             <input
               type="text"
               value={roofArea}
               onChange={(e) => setRoofArea(e.target.value)}
-              className="border border-green-500 rounded-md p-2 w-full"
+              className="rounded-full py-2 px-4 w-1/2 bg-[#E6E6E6] text-gray-600 appearance-none border-none focus:outline-none"
               placeholder="Enter area in sq. m. or sq. ft."
             />
-            <label className="block mt-2 text-gray-700">% of Roof Top Area available:</label>
             <input
               type="text"
               value={roofAreaPercentage}
               onChange={(e) => setRoofAreaPercentage(e.target.value)}
-              className="border border-green-500 rounded-md p-2 w-full"
+              className="rounded-full py-2 px-4 w-1/2 bg-[#E6E6E6] text-gray-600 appearance-none border-none focus:outline-none"
               placeholder="Enter percentage"
             />
           </div>
         )}
 
-        {selectedOption === 'Monthly Electricity Consumption Units' && (
-          <div className="mb-4">
-            <label className="block text-gray-700">Monthly Electricity Consumption:</label>
+        {selectedOption === "Monthly Electricity Consumption Units" && (
+          <div className="mb-8 flex gap-4">
             <input
               type="text"
               value={consumption}
               onChange={(e) => setConsumption(e.target.value)}
-              className="border border-green-500 rounded-md p-2 w-full"
+              className="rounded-full py-2 px-4 w-1/2 bg-[#E6E6E6] text-gray-600 appearance-none border-none focus:outline-none"
               placeholder="Enter units"
             />
+
+            <select
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+              className="rounded-full py-2 px-4 w-1/2 bg-[#E6E6E6] text-gray-600 appearance-none border-none focus:outline-none"
+            >
+              <option
+                value=""
+                disabled
+                className="text-gray-400 rounded-b-full"
+              >
+                Select State
+              </option>
+              <option value="andaman">Andaman and Nicobar Islands</option>
+              <option value="andhra">Andhra Pradesh</option>
+              <option value="arunachal">Arunachal Pradesh</option>
+              <option value="assam">Assam</option>
+              <option value="bihar">Bihar</option>
+              <option value="chandigarh">Chandigarh</option>
+              <option value="chhattisgarh">Chhattisgarh</option>
+              <option value="dadra_nagar_haveli">
+                Dadra and Nagar Haveli and Daman and Diu
+              </option>
+              <option value="daman">Daman and Diu</option>
+              <option value="delhi">Delhi</option>
+              <option value="goa">Goa</option>
+              <option value="gujarat">Gujarat</option>
+              <option value="haryana">Haryana</option>
+              <option value="himachal">Himachal Pradesh</option>
+              <option value="jharkhand">Jharkhand</option>
+              <option value="karnataka">Karnataka</option>
+              <option value="kerala">Kerala</option>
+              <option value="lakshadweep">Lakshadweep</option>
+              <option value="madhya_pradesh">Madhya Pradesh</option>
+              <option value="maharashtra">Maharashtra</option>
+              <option value="manipur">Manipur</option>
+              <option value="meghalaya">Meghalaya</option>
+              <option value="mizoram">Mizoram</option>
+              <option value="nagaland">Nagaland</option>
+              <option value="odisha">Odisha</option>
+              <option value="punjab">Punjab</option>
+              <option value="rajasthan">Rajasthan</option>
+              <option value="sikkim">Sikkim</option>
+              <option value="tamil_nadu">Tamil Nadu</option>
+              <option value="telangana">Telangana</option>
+              <option value="tripura">Tripura</option>
+              <option value="uttar_pradesh">Uttar Pradesh</option>
+              <option value="uttarakhand">Uttarakhand</option>
+              <option value="west_bengal">West Bengal</option>
+
+              {/* Add other options as needed */}
+            </select>
           </div>
         )}
 
-        {selectedOption === 'Monthly Electricity Bill' && (
-          <div className="mb-4">
-            <label className="block text-gray-700">Budget:</label>
+        {selectedOption === "Monthly Electricity Bill" && (
+          <div className="mb-8 flex gap-4">
             <input
               type="text"
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
-              className="border border-green-500 rounded-md p-2 w-full"
+              className="rounded-full py-2 px-4 w-1/2 bg-[#E6E6E6] text-black"
               placeholder="Enter budget in Rs."
             />
-          </div>
-        )}
 
-        <div className="mb-4">
-          <label className="block text-lg font-bold mb-2 text-green-800">2. Select State and Customer Category</label>
-          <div className="flex space-x-4">
             <select
               value={state}
               onChange={(e) => setState(e.target.value)}
-              className="border border-green-500 rounded-md p-2 w-1/2" // Set to 50% width
+              className="rounded-full py-2 px-4 w-1/2 bg-[#E6E6E6] text-gray-600 appearance-none border-none focus:outline-none"
             >
-              <option value="">Select State</option>
-              <option value="35">ANDAMAN and NICOBAR ISLANDS</option>
-              <option value="28">ANDHRA PRADESH</option>
-              <option value="12">ARUNACHAL PRADESH</option>
-              <option value="18">ASSAM</option>
-              <option value="10">BIHAR</option>
-              <option value="4">CHANDIGARH</option>
-              <option value="22">CHHATTISGARH</option>
-              <option value="30">GOA</option>
-              <option value="24">GUJARAT</option>
-              <option value="6">HARYANA</option>
-              <option value="2">HIMACHAL PRADESH</option>
-              <option value="1">JAMMU and KASHMIR</option>
-              <option value="20">JHARKHAND</option>
-              <option value="29">KARNATAKA</option>
-              <option value="32">KERALA</option>
-              <option value="37">LADAKH</option>
-              <option value="31">LAKSHADWEEP</option>
-              <option value="23">MADHYA PRADESH</option>
-              <option value="27">MAHARASHTRA</option>
-              <option value="14">MANIPUR</option>
-              <option value="17">MEGHALAYA</option>
-              <option value="15">MIZORAM</option>
-              <option value="13">NAGALAND</option>
-              <option value="7">NCT OF DELHI</option>
-              <option value="21">ORISSA</option>
-              <option value="34">PUDUCHERRY</option>
-              <option value="3">PUNJAB</option>
-              <option value="8">RAJASTHAN</option>
-              <option value="11">SIKKIM</option>
-              <option value="33">TAMIL NADU</option>
-              <option value="36">TELANGANA</option>
-              <option value="38">THE DADRA AND NAGAR HAVELI AND DAMAN AND DIU</option>
-              <option value="16">TRIPURA</option>
-              <option value="9">UTTAR PRADESH</option>
-              <option value="5">UTTARAKHAND</option>
-              <option value="19">WEST BENGAL</option>
-            </select>
+              <option
+                value=""
+                disabled
+                className="text-gray-400 rounded-b-full"
+              >
+                Select State
+              </option>
+              <option value="andaman">Andaman and Nicobar Islands</option>
+              <option value="andhra">Andhra Pradesh</option>
+              <option value="arunachal">Arunachal Pradesh</option>
+              <option value="assam">Assam</option>
+              <option value="bihar">Bihar</option>
+              <option value="chandigarh">Chandigarh</option>
+              <option value="chhattisgarh">Chhattisgarh</option>
+              <option value="dadra_nagar_haveli">
+                Dadra and Nagar Haveli and Daman and Diu
+              </option>
+              <option value="daman">Daman and Diu</option>
+              <option value="delhi">Delhi</option>
+              <option value="goa">Goa</option>
+              <option value="gujarat">Gujarat</option>
+              <option value="haryana">Haryana</option>
+              <option value="himachal">Himachal Pradesh</option>
+              <option value="jharkhand">Jharkhand</option>
+              <option value="karnataka">Karnataka</option>
+              <option value="kerala">Kerala</option>
+              <option value="lakshadweep">Lakshadweep</option>
+              <option value="madhya_pradesh">Madhya Pradesh</option>
+              <option value="maharashtra">Maharashtra</option>
+              <option value="manipur">Manipur</option>
+              <option value="meghalaya">Meghalaya</option>
+              <option value="mizoram">Mizoram</option>
+              <option value="nagaland">Nagaland</option>
+              <option value="odisha">Odisha</option>
+              <option value="punjab">Punjab</option>
+              <option value="rajasthan">Rajasthan</option>
+              <option value="sikkim">Sikkim</option>
+              <option value="tamil_nadu">Tamil Nadu</option>
+              <option value="telangana">Telangana</option>
+              <option value="tripura">Tripura</option>
+              <option value="uttar_pradesh">Uttar Pradesh</option>
+              <option value="uttarakhand">Uttarakhand</option>
+              <option value="west_bengal">West Bengal</option>
 
-            <select
-              value={customerType}
-              onChange={(e) => setCustomerType(e.target.value)}
-              className="border border-green-500 rounded-md p-2 w-1/2" // Set to 50% width
-            >
-              <option value="">Select Category of Customer</option>
-              <option value="2">Residential</option>
-              <option value="3">Industrial</option>
-              <option value="1">Commercial</option>
+              {/* Add other options as needed */}
             </select>
           </div>
+        )}
+
+        {/* Common Inputs */}
+        <div className="flex justify-between mb-8 items-center">
+          <label className="text-gray-700 mr-4 font-semibold text-xl">
+            Customer Category
+          </label>
+          <button
+            type="button"
+            onClick={() => setCustomerType("Residential")}
+            className={`px-16 py-[10px] rounded-full ${
+              customerType === "Residential"
+                ? "bg-green-500 text-white"
+                : "border border-black text-black"
+            } hover:bg-green-500 hover:text-white transition`}
+          >
+            Residential
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setCustomerType("Commercial")}
+            className={`px-16 py-[10px] rounded-full ${
+              customerType === "Commercial"
+                ? "bg-green-500 text-white"
+                : "border border-black text-black"
+            } hover:bg-green-500 hover:text-white transition`}
+          >
+            Commercial
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setCustomerType("Industrial")}
+            className={`px-16 py-[10px] rounded-full ${
+              customerType === "Industrial"
+                ? "bg-green-500 text-white"
+                : "border border-black text-black"
+            } hover:bg-green-500 hover:text-white transition`}
+          >
+            Industrial
+          </button>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-lg font-bold mb-2 text-green-800">3. What is your average Electricity Unit Cost? :</label>
-          <div className="flex items-center">
+        <div className="flex items-center w-full">
+          <label className="text-gray-700 font-semibold text-xl mr-4">
+            Average Electricity Unit Cost is
+          </label>
+          <div className="flex items-center w-3/5 space-x-2">
             <input
               type="text"
               value={electricityCost}
               onChange={(e) => setElectricityCost(e.target.value)}
-              className="border border-green-500 rounded-md p-2 w-1/4"
-              placeholder="Rs. / kWh"
+              className="rounded-full py-2 px-4 w-2/3 bg-[#E6E6E6] text-black border border-gray-300 appearance-none border-none focus:outline-none mr-2"
+              placeholder="Enter cost in Rs."
             />
-            <span className="ml-2 text-black">Rs. / kWh</span>
+            <span className="text-gray-700 font-semibold text-lg mr-4">
+              Rs. / kWh
+            </span>
           </div>
         </div>
 
         <button
           type="button"
-          onClick={handleSubmit}
-          className="bg-yellow-300 border border-black text-black px-4 py-2 rounded-md hover:bg-green-700 transition duration-200"
+          onClick={() => alert("your calculated value")}
+          className="bg-green-500 border text-white border-black hover:text-slate-700 px-8 py-2 rounded-full hover:bg-green-400 transition duration-200 mt-8"
         >
           Calculate
         </button>
